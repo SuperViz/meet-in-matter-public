@@ -33,7 +33,6 @@ const SuperViz = (function () {
          camsOff: false,
          layoutPosition: 'center',
          camerasPosition: 'right',
-         environment: 'dev',
          offset: {
             top: 41,
             bottom: 0,
