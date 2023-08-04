@@ -1,0 +1,77 @@
+#world-section {
+   margin: 0;
+   padding: 0;
+   margin-block-start: 0;
+   margin-block-end: 0;
+   margin-top: 41px;
+}
+
+#world-section.hide {
+   display: none;
+}
+
+#world-section iframe {
+   width: 100vw;
+   height: calc(100% - 92px);
+}
+
+header {
+   display: none;
+   align-items: center;
+   flex: 1;
+   padding: 20px;
+   height: 20px;
+   background: #000;
+
+   opacity: 0.5;
+   backdrop-filter: blur(10px);
+   border-bottom: 1px solid #a1a9b8;
+   z-index: 1;
+   position: absolute;
+   justify-content: space-between;
+   width: 100%;
+}
+
+header.visible {
+   display: flex;
+}
+
+header .invite {
+   display: none;
+   align-items: center;
+}
+
+header.joined .invite {
+   display: flex;
+}
+
+header .invite button {
+   background: #000;
+   border: none;
+   color: #fff;
+   display: flex;
+   cursor: pointer;
+}
+header .invite button img {
+   margin-right: 10px;
+}
+
+header .invite button span {
+   display: flex;
+   margin-top: 1px;
+}
+
+header #counter {
+   display: none;
+   padding: 0 0 0 1.5rem;
+}
+
+header.joined #counter {
+   display: flex;
+}
+
+header #counter span {
+   display: flex;
+   align-items: center;
+   color: #fff;
+}

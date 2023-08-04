@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Free 60-minute meetings inside Matterport tours</title>
+      <link rel="shortcut icon" sizes="16x16" href="./assets/img/logo.png" />
+      <meta charset="UTF-8" />
+      <link href="assets/css/styles.css" rel="stylesheet" />
+      <link href="assets/css/ended-screens.css" rel="stylesheet" />
+      <link href="assets/css/world.css" rel="stylesheet" />
+      <link href="assets/css/home.css" rel="stylesheet" />
+      <link href="assets/css/loader.css" rel="stylesheet" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-W339LXEM17"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() {
+            dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+
+         gtag('config', 'G-W339LXEM17');
+      </script>
+
+      <!-- Google Tag Manager -->
+      <script>
+         (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+               j = d.createElement(s),
+               dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+         })(window, document, 'script', 'dataLayer', 'GTM-MGCNKRW');
+      </script>
+      <!-- End Google Tag Manager -->
+   </head>
+
+   <body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript
+         ><iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MGCNKRW"
+            height="0"
+            width="0"
+            style="display: none; visibility: hidden"
+         ></iframe
+      ></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+      <header id="header">
+         <div class="invite">
+            <button><img src="./assets/img/invite.svg" alt="Invite" /><span>INVITE SOMEONE</span></button>
+         </div>
+         <div id="counter"><span id="meetingtime">00:00</span></div>
+      </header>
+      <main id="app" class="home">
+         <section id="home" class="hide">
+            <div class="logo">
+               <img src="./assets/img/merged.svg" />
+            </div>
+            <div class="form" id="formId">
+               <h4 id="head">Paste your Matterport tour link to generate a free meeting link</h4>
+               <form>
+                  <input type="text" value="Tour link" id="urlInput" required class="default" />
+
+                  <button class="green" id="schedule">SCHEDULE</button>
+                  <button type="submit" id="submit">GO</button>
+               </form>
+               <p><strong>Free</strong> 60-minute meetings inside Matterport tours for up to 16 participants</p>
+            </div>
+            <div class="video">
+               <iframe
+                  src="https://www.youtube.com/embed/9kDxLc5o6W4"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+               ></iframe>
+            </div>
+         </section>
+         <section id="loader-section">
+            <div class="loader"></div>
+         </section>
+         <section id="world-section" class="hide"></section>
+         <section id="thanks-section" class="hide">
+            <div class="buttons">
+               <h1>Meeting ended! Thank you for choosing our service. 👏</h1>
+               <button class="green feedback">SEND FEEDBACK</button>
+               <button class="meeting">NEW MEETING</button>
+            </div>
+         </section>
+         <section id="ended-section">
+            <div class="buttons">
+               <h1>💡 Time is up</h1>
+               <button class="green feedback">SEND FEEDBACK</button>
+               <button class="meeting">NEW MEETING</button>
+            </div>
+         </section>
+      </main>
+      <footer id="footer">
+         <div class="left">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-YOjF0icjMjF5U9DaYcFOVzMNNVDamnE8FL0Opbpw_lrWbA/viewform" target="_blank"
+               >Contact Us</a
+            >
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfi1_F38row2CsxasyMkSGsWcpnM6v8APHL7Z2Hy8ICjn1uRA/viewform" target="_blank"
+               >Leave Feedback</a
+            >
+         </div>
+         <div class="right">
+            <span><span>Built with the </span><a href="https://superviz.com" target="_blank">SuperViz SDK</a></span>
+         </div>
+      </footer>
+
+      <script type="module" src="https://unpkg.com/@superviz/sdk@4.11.0"></script>
+      <script type="module" src="https://unpkg.com/@superviz/matterport-plugin@0.8.8"></script>
+      <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pubsub-js/1.9.4/pubsub.min.js"></script>
+      <script type="module" src="src/index.js"></script>
+   </body>
+</html>

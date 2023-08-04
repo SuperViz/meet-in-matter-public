@@ -1,0 +1,102 @@
+* {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   width: 100%;
+   height: 100%;
+   background-color: #ddd5ea;
+   margin: 0;
+   font-family: Roboto, Helvetica, Arial, sans-serif;
+   color: #424245;
+   font-weight: 300;
+}
+
+h1 {
+   font-weight: 300;
+}
+
+a {
+   color: #424245;
+   text-decoration: none;
+   font-size: 14px;
+}
+
+p {
+   font-size: 16px;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+h4 {
+   font-weight: 300;
+   font-size: 21px;
+   margin: auto;
+   line-height: 1.4em;
+}
+
+@media screen and (min-width: 985px) {
+   h4 {
+      font-size: 21px;
+   }
+}
+
+button:hover,
+button:hover {
+   opacity: 0.8;
+   cursor: pointer;
+}
+
+main {
+   width: 100%;
+   height: 100%;
+}
+section {
+   width: 100%;
+   height: 100%;
+
+   position: relative;
+}
+
+#footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   background: #f2f2f2;
+   width: 100%;
+   height: auto;
+   display: flex;
+   padding: 15px;
+
+   z-index: 1;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+#footer .left {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+#footer .left a {
+   margin-right: 20px;
+}
+
+#footer .right {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+#footer .right span span {
+   display: none;
+}
+
+@media screen and (min-width: 985px) {
+   #footer .right span span {
+      display: initial;
+   }
+}

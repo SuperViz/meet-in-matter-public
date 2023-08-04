@@ -1,0 +1,31 @@
+main #thanks-section,
+main #ended-section {
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+   display: none;
+   flex-direction: column;
+   flex-wrap: nowrap;
+}
+
+main #thanks-section.visible,
+main #ended-section.visible {
+   display: flex;
+}
+
+#thanks-section button,
+#ended-section button,
+#thanks-section a,
+#ended-section a {
+   box-sizing: border-box;
+   height: 73px;
+
+   color: #fff;
+   background: #c497c2;
+   border: none;
+   border-radius: 6px;
+   font-size: 21px;
+   width: 250px;
+   display: inline-block;
+   margin-top: 10px;
+}
