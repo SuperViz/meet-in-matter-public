@@ -27,7 +27,6 @@ const SuperViz = (function () {
             id: userId,
             name: name,
          },
-         environment: 'dev',
       });
 
       PubSub.subscribe(Matterport.MATTERPORT_LOADED, loadPluginSDK);
