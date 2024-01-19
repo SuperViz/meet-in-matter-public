@@ -22,9 +22,6 @@ class App {
       this.headerSection.addEventListener('click', this.clickInvite.bind(this));
 
       PubSub.subscribe(Router.ROUTE_CHANGED, this.changePage.bind(this));
-
-      // Pubsub - listen for event: Matterport loaded ::
-      PubSub.subscribe(Matterport.MATTERPORT_LOADED, this.onContentLoaded.bind(this));
    }
 
    clickInvite() {
@@ -61,7 +58,7 @@ class App {
 
    init(id) {
       // Initilize the SDK ::
-      SuperViz.init(userId, id, '');
+      SuperViz.init(userId, id, ' ');
 
       // Pubsub - listen for event: When I joined ::
       PubSub.subscribe(SuperViz.MY_PARTICIPANT_JOINED, this.onMyParticipantJoined.bind(this));
@@ -79,48 +76,17 @@ class App {
 
    onMyParticipantLeft(e) {
       window.location = '/#/thanks';
+      superviz_sdk.destroy();
    }
 
    onMyParticipantJoined(e, payload) {
-      superviz_sdk = payload.sdk;
-
-      this.checkForTime();
+      superviz_sdk = payload.room;
 
       // show content ::
       this.loaderSection.classList.add('hide');
       this.contentSection.classList.remove('hide');
 
       this.headerSection.classList.add('joined');
-   }
-
-   checkForTime() {
-      superviz_sdk
-         .fetchSyncProperty(SuperViz.MEETING_TIME)
-         .then((value) => {
-            timeEntered = new Date();
-            timeEntered.setTime(value.data);
-
-            let now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            let distance = now - timeEntered;
-
-            // Time calculations for days, hours, minutes and seconds
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60));
-
-            if (hours > 0) {
-               timeEntered.setTime(new Date().getTime());
-
-               timeEntered.setMinutes(timeEntered.getMinutes() - 59);
-            }
-         })
-         .catch(() => {
-            timeEntered = new Date().getTime();
-
-            superviz_sdk.setSyncProperty(SuperViz.MEETING_TIME, new Date().getTime());
-         });
-
-      timer = setInterval(this.updateCounter.bind(this), 1000);
    }
 
    updateCounter() {
@@ -139,7 +105,6 @@ class App {
       if (hours > 0) {
          clearInterval(timer);
          superviz_sdk.destroy();
-         SuperViz.unloadPlugin();
          window.location = '/#/ended';
       }
 
@@ -147,11 +112,6 @@ class App {
       if (seconds < 10) seconds = '0' + seconds;
 
       meetingtime.innerHTML = minutes + ':' + seconds;
-   }
-
-   async onContentLoaded(e, payload) {
-      //Save content ::
-      currentContent = payload.model;
    }
 }
 export default App;
